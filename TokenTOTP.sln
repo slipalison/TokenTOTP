@@ -11,6 +11,8 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenTOTP.API", "src\TokenTOTP.API\TokenTOTP.API.csproj", "{50820BE1-09A5-41C0-9BB9-C32507BA144E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenTOTP.Shared", "src\TokenTOTP.Shared\TokenTOTP.Shared.csproj", "{07B7DC11-D4C9-4B82-AC2A-C799A2A8F9BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{50820BE1-09A5-41C0-9BB9-C32507BA144E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50820BE1-09A5-41C0-9BB9-C32507BA144E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50820BE1-09A5-41C0-9BB9-C32507BA144E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07B7DC11-D4C9-4B82-AC2A-C799A2A8F9BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07B7DC11-D4C9-4B82-AC2A-C799A2A8F9BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07B7DC11-D4C9-4B82-AC2A-C799A2A8F9BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07B7DC11-D4C9-4B82-AC2A-C799A2A8F9BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +42,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F7DD188C-08A3-44C9-BA1F-287EFB96AE76} = {EF44A3BF-2227-483D-ACBC-1219AC8B544D}
 		{50820BE1-09A5-41C0-9BB9-C32507BA144E} = {EF44A3BF-2227-483D-ACBC-1219AC8B544D}
+		{07B7DC11-D4C9-4B82-AC2A-C799A2A8F9BA} = {EF44A3BF-2227-483D-ACBC-1219AC8B544D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8EE789BD-1F91-47C3-BCB2-744BC1CEFC9B}

@@ -1,21 +1,15 @@
-﻿using ProtoBuf;
-using System;
+﻿using System;
 
 namespace Responses
 {
-    [ProtoContract]
     public class Error : IError
     {
-        [ProtoMember(1)]
         public string Code { get; set; }
 
-        [ProtoMember(2)]
         public string Message { get; set; }
 
-        [ProtoMember(3)]
         public LayerEnum Layer { get; set; }
 
-        [ProtoMember(4)]
         public string ApplicationName { get; set; }
 
         public Error(string code, string message)

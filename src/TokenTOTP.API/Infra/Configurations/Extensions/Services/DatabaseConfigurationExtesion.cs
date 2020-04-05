@@ -1,9 +1,9 @@
-using System;
-using TokenTOTP.API.Infra.Data.Contexts;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using Microsoft.EntityFrameworkCore;
+using System;
+using TokenTOTP.API.Infra.Data.Contexts;
 
 namespace TokenTOTP.API.Infra.Configurations.Extensions.Services
 {

@@ -1,11 +1,10 @@
-using System.Threading.Tasks;
-using Core.Customer.Client.V1;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using System.Threading.Tasks;
 
 namespace TokenTOTP.API.Infra.Configurations.Extensions.Services
 {
@@ -13,23 +12,18 @@ namespace TokenTOTP.API.Infra.Configurations.Extensions.Services
     {
         public static IServiceCollection ConfigurationBusinessService(this IServiceCollection services, IConfiguration configuration)
         {
-            if(configuration["environment"] == "Test")
+            if (configuration["environment"] == "Test")
                 return services;
-
-            services.AddHttpClient(nameof(CustomerApiClient), config =>
-            {
-                config.BaseAddress = new System.Uri(configuration.GetSection("Services:CoreCustomerNew").GetValue<string>("Url"));
-            });
-
-            services.AddScoped<ICustomerApiClient, CustomerApiClient>();
             return services;
         }
 
         public static IServiceCollection AddAuthenticationExtension(this IServiceCollection services, IConfiguration config, IWebHostEnvironment hostingEnvironment)
         {
             var authority = config["Auth:Authority"];
-            if(hostingEnvironment.EnvironmentName != "Production" && config["environment"] != "Test")
-                authority = "https://login.acessobank-stg.com.br";
+            if (hostingEnvironment.EnvironmentName != "Production" && config["environment"] != "Test")
+            {
+                // authority = "";
+            }
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>

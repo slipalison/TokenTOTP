@@ -8,6 +8,7 @@ services:
       dockerfile: src/TokenTOTP.API/Dockerfile
     depends_on:
       - db
+      - rabbit
 
   db:
     image: mysql
@@ -17,3 +18,9 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
+
+  rabbit:
+    image: rabbitmq:3-management
+    ports:
+      - "15672:15672"
+      - "5672:5672"

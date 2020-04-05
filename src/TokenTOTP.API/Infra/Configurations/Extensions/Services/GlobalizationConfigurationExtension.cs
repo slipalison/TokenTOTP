@@ -1,5 +1,5 @@
-using System.Globalization;
 using Microsoft.Extensions.DependencyInjection;
+using System.Globalization;
 
 namespace TokenTOTP.API.Infra.Configurations.Extensions.Services
 {

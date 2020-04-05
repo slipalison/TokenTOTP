@@ -1,7 +1,7 @@
-using System;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Threading.Tasks;
 
 namespace Responses
 {
@@ -23,7 +23,7 @@ namespace Responses
             {
                 await Next(httpContext);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Logger.LogError(e, "An internal error occurred.");
                 throw;

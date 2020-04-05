@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using ProtoBuf;
 using System;
 using System.Diagnostics;
 
@@ -14,7 +13,6 @@ namespace Responses
         public static readonly string ValueToFailure = "There is no value for failure.";
     }
 
-    [ProtoContract]
     public class Result
     {
         private Result()
@@ -25,7 +23,6 @@ namespace Responses
         private Error _error;
 
         [JsonIgnore]
-        [ProtoMember(1)]
         public Error Error
         {
             get
@@ -38,7 +35,6 @@ namespace Responses
             private set => _error = value;
         }
 
-        [ProtoMember(2)]
         public bool IsSuccess { get; private set; }
 
         protected Result(bool isSuccess, Error error)
@@ -132,7 +128,6 @@ namespace Responses
         }
     }
 
-    [ProtoContract]
     public class Result<T>
     {
         private Result()
@@ -140,7 +135,6 @@ namespace Responses
         }
 
         [JsonProperty(nameof(Error))]
-        [ProtoMember(1)]
         private Error _error;
 
         [JsonIgnore]
@@ -156,11 +150,9 @@ namespace Responses
             private set => _error = value;
         }
 
-        [ProtoMember(2)]
         [JsonProperty]
         public bool IsSuccess { get; private set; }
 
-        [ProtoMember(3)]
         [JsonProperty(nameof(Value))]
         private T _value;
 
@@ -185,14 +177,12 @@ namespace Responses
         }
     }
 
-    [ProtoContract]
     public class Result<TValue, TError> where TError : IError
     {
         private Result()
         {
         }
 
-        [ProtoMember(1)]
         [JsonProperty(nameof(Error))]
         private TError _error;
 
@@ -209,11 +199,9 @@ namespace Responses
             private set => _error = value;
         }
 
-        [ProtoMember(2)]
         [JsonProperty]
         public bool IsSuccess { get; private set; }
 
-        [ProtoMember(3)]
         [JsonProperty(nameof(Value))]
         private TValue _value;
 

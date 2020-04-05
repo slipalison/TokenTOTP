@@ -1,6 +1,6 @@
-using System.Diagnostics.CodeAnalysis;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Diagnostics.CodeAnalysis;
 
 namespace TokenTOTP.API.Infra.Swagger.Filters
 {
@@ -11,7 +11,7 @@ namespace TokenTOTP.API.Infra.Swagger.Filters
         {
             var paths = new OpenApiPaths();
 
-            foreach(var (key, value) in swaggerDoc.Paths)
+            foreach (var (key, value) in swaggerDoc.Paths)
             {
                 paths.Add(LowercaseEverythingButParameters(key), value);
             }

@@ -1,11 +1,11 @@
 using Acesso.Sdk.FluentValidation.Filters;
-using TokenTOTP.API.Infra.Filters;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
+using TokenTOTP.API.Infra.Filters;
 
 namespace TokenTOTP.API.Infra.Configurations.Extensions.Services
 {

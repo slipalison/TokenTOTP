@@ -1,9 +1,9 @@
-using TokenTOTP.API.Infra.Data.Contexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TokenTOTP.API.Infra.Data.Contexts;
 
 namespace TokenTOTP.API.Infra.Configurations.Extensions.Application
 {

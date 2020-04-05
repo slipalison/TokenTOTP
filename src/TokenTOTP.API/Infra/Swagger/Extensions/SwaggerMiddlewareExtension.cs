@@ -11,7 +11,7 @@ namespace TokenTOTP.API.Infra.Swagger.Extensions
 
             builder.UseSwaggerUI(options =>
             {
-                foreach(var description in versionProvider.ApiVersionDescriptions)
+                foreach (var description in versionProvider.ApiVersionDescriptions)
                 {
                     options.RoutePrefix = "swagger";
                     options.SwaggerEndpoint($"../swagger/{description.GroupName}/swagger.json", description.GroupName);

@@ -1,10 +1,10 @@
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
 using System;
 using System.IO;
 using System.Reflection;
 using TokenTOTP.API.Infra.Swagger.Filters;
-using Microsoft.AspNetCore.Mvc.ApiExplorer;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.OpenApi.Models;
 
 namespace TokenTOTP.API.Infra.Swagger.Extensions
 {
