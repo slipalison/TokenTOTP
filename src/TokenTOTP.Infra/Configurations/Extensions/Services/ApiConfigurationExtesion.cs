@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
-using Responses;
+using TokenTOTP.Infra.Extensions.Validations;
 using TokenTOTP.Infra.Filters;
 
 namespace TokenTOTP.Infra.Configurations.Extensions.Services

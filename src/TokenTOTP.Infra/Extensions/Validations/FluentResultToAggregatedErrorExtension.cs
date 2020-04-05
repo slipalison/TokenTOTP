@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Responses
+namespace TokenTOTP.Infra.Extensions.Validations
 {
     [ExcludeFromCodeCoverage]
     public static class FluentResultToAggregatedErrorExtension

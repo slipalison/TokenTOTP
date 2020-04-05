@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Responses;
 
-namespace Responses
+namespace TokenTOTP.Infra.Extensions.Validations
 {
     public static class ActionContextExtension
     {

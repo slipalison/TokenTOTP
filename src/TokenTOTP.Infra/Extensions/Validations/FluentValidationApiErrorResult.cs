@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Responses
+namespace TokenTOTP.Infra.Extensions.Validations
 {
     internal class FluentValidationApiErrorResult
     {

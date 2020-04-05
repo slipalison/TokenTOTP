@@ -1,6 +1,7 @@
 using FluentValidation;
+using Responses;
 
-namespace Responses
+namespace TokenTOTP.Infra.Extensions.Validations
 {
     public static class FluentValidationExtensions
     {
