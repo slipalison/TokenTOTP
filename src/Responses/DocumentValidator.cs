@@ -9,16 +9,16 @@ namespace Responses
 
         protected override bool IsValid(PropertyValidatorContext context)
         {
-            if(!(context.PropertyValue is string document))
+            if (!(context.PropertyValue is string document))
                 return false;
 
-            if(string.IsNullOrEmpty(document))
+            if (string.IsNullOrEmpty(document))
                 return false;
 
-            if(document.Length == 11)
+            if (document.Length == 11)
                 return IsCpfValid(document);
 
-            if(document.Length == 14)
+            if (document.Length == 14)
                 return IsCnpjValid(document);
 
             return false;
@@ -36,13 +36,13 @@ namespace Responses
             cnpj = cnpj.Trim();
             cnpj = cnpj.Replace(".", "").Replace("-", "").Replace("/", "");
 
-            if(cnpj.Length != 14)
+            if (cnpj.Length != 14)
                 return false;
 
             cnpjTemp = cnpj.Substring(0, 12);
             sum = 0;
 
-            for(var i = 0; i < 12; i++)
+            for (var i = 0; i < 12; i++)
                 sum += int.Parse(cnpjTemp[i].ToString()) * multiplier1[i];
 
             rest = sum % 11;
@@ -51,7 +51,7 @@ namespace Responses
             cnpjTemp = cnpjTemp + digit;
             sum = 0;
 
-            for(var i = 0; i < 13; i++)
+            for (var i = 0; i < 13; i++)
                 sum += int.Parse(cnpjTemp[i].ToString()) * multiplier2[i];
 
             rest = sum % 11;
@@ -73,13 +73,13 @@ namespace Responses
             cpf = cpf.Trim();
             cpf = cpf.Replace(".", "").Replace("-", "");
 
-            if(cpf.Length != 11)
+            if (cpf.Length != 11)
                 return false;
 
             cpfTemp = cpf.Substring(0, 9);
             sum = 0;
 
-            for(var i = 0; i < 9; i++)
+            for (var i = 0; i < 9; i++)
                 sum += int.Parse(cpfTemp[i].ToString()) * multiplier1[i];
 
             rest = sum % 11;
@@ -88,7 +88,7 @@ namespace Responses
             cpfTemp = cpfTemp + digit;
             sum = 0;
 
-            for(var i = 0; i < 10; i++)
+            for (var i = 0; i < 10; i++)
                 sum += int.Parse(cpfTemp[i].ToString()) * multiplier2[i];
 
             rest = sum % 11;

@@ -1,12 +1,12 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using AutoMapper;
+using MediatR;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Responses;
-using AutoMapper;
-using MediatR;
 using TokenTOTP.Infra.Configurations.Extensions.Application;
 using TokenTOTP.Infra.Configurations.Extensions.Services;
 using TokenTOTP.Infra.Swagger.Extensions;

@@ -1,8 +1,8 @@
-using System;
-using System.Diagnostics.CodeAnalysis;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace TokenTOTP.Infra.Extensions.Validations
 {

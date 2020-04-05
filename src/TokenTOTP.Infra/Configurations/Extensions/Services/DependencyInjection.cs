@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TokenTOTP.Infra.Data.Repositories;
-using TokenTOTP.Domain.Services;
 using TokenTOTP.Domain.Repositories;
+using TokenTOTP.Domain.Services;
+using TokenTOTP.Infra.Data.Repositories;
 
 namespace TokenTOTP.Infra.Configurations.Extensions.Services
 {

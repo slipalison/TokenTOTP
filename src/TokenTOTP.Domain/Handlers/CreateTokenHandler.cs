@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using TokenTOTP.Domain.Model.View;
-using TokenTOTP.Infra.Configurations;
 using TokenTOTP.Domain.Repositories;
 using TokenTOTP.Domain.Services;
+using TokenTOTP.Infra.Configurations;
 
 namespace TokenTOTP.Domain.Handlers
 {

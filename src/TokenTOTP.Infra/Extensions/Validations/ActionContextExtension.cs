@@ -1,7 +1,7 @@
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Responses;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace TokenTOTP.Infra.Extensions.Validations
 {

@@ -1,5 +1,5 @@
-using System.Text.RegularExpressions;
 using FluentValidation.Validators;
+using System.Text.RegularExpressions;
 
 namespace Responses
 {
@@ -16,9 +16,9 @@ namespace Responses
 
         protected override bool IsValid(PropertyValidatorContext context)
         {
-            if(!(context.PropertyValue is string document)) { return false; }
+            if (!(context.PropertyValue is string document)) { return false; }
 
-            if(document.Length < _length) return false;
+            if (document.Length < _length) return false;
 
             var regex = new Regex(_pattern, RegexOptions.Compiled);
 

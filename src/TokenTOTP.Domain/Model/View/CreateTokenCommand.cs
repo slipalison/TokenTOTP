@@ -1,6 +1,5 @@
 ﻿using FluentValidation.Results;
 using MediatR;
-using Newtonsoft.Json;
 using Responses;
 using TokenTOTP.Domain.Validations;
 using TokenTOTP.Shared.ViewModel;
@@ -17,6 +16,7 @@ namespace TokenTOTP.Domain.Model.View
         }
 
         public bool IsValid() => new CreateTokenCommandValidation().Validate(this).IsValid;
+
         public ValidationResult ValidationResult() => new CreateTokenCommandValidation().Validate(this);
     }
 }
