@@ -13,8 +13,8 @@ using static Microsoft.AspNetCore.Http.StatusCodes;
 
 namespace TokenTOTP.API.Http.Controllers.V1
 {
-    [Route("api/V{version:apiVersion}/[controller]")]
     [ApiController]
+    [Route("api/V{version:apiVersion}/[controller]")]
     public class IdentificationTokenController : Controller
     {
         private readonly IMediator _mediator;
