@@ -1,6 +1,6 @@
 ﻿namespace TokenTOTP.Shared.ViewModel
 {
-    public class CreateTokenCommand : TokenCommand
+    public class CreateTokenCommand : ITokenCommand
     {
         public CreateTokenCommand(string tokenType, int? timeToLive, string seed)
         {
@@ -8,5 +8,9 @@
             TimeToLive = timeToLive;
             Seed = seed;
         }
+
+        public string Seed { get; set; }
+        public string TokenType { get; set; }
+        public int? TimeToLive { get; set; }
     }
 }

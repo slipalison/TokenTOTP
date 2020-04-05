@@ -8,7 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using TokenTOTP.API.Domain.Model.View;
+using TokenTOTP.Domain.Model.View;
 using static Microsoft.AspNetCore.Http.StatusCodes;
 
 namespace TokenTOTP.API.Http.Controllers.V1
@@ -38,7 +38,7 @@ namespace TokenTOTP.API.Http.Controllers.V1
         {
             if (!command.IsValid())
             {
-                var errors = command.ValidationResult.Errors.Select(err => new
+                var errors = command.ValidationResult().Errors.Select(err => new
                 {
                     err.PropertyName,
                     err.ErrorMessage

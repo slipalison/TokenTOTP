@@ -13,6 +13,21 @@
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(MSBuildThisFileName).xml</DocumentationFile>
   </PropertyGroup>
 
+  <!--<ItemGroup>
+    <Compile Remove="Domain\**" />
+    <Compile Remove="Infra\**" />
+    <Compile Remove="Services\**" />
+    <Content Remove="Domain\**" />
+    <Content Remove="Infra\**" />
+    <Content Remove="Services\**" />
+    <EmbeddedResource Remove="Domain\**" />
+    <EmbeddedResource Remove="Infra\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <None Remove="Domain\**" />
+    <None Remove="Infra\**" />
+    <None Remove="Services\**" />
+  </ItemGroup>-->
+
   <ItemGroup>
     <PackageReference Include="MediatR" Version="8.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
@@ -34,8 +49,6 @@
 
     <PackageReference Include="Microsoft.Extensions.Caching.Redis" Version="2.2.0" />
 
-    <PackageReference Include="Otp.NET" Version="1.2.2" />
-
     <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
     <PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
     <PackageReference Include="Serilog.Exceptions" Version="5.4.0" />
@@ -45,8 +58,6 @@
 
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.3.1" />
     <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="5.1.0" />
-
-    <PackageReference Include="Acesso.Sdk" Version="1.0.0.24070" />
 
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.3">
       <PrivateAssets>all</PrivateAssets>
@@ -64,6 +75,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Responses\Responses.csproj" />
+    <ProjectReference Include="..\TokenTOTP.Infra\TokenTOTP.Infra.csproj" />
     <ProjectReference Include="..\TokenTOTP.Shared\TokenTOTP.Shared.csproj" />
   </ItemGroup>
 </Project>

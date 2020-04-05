@@ -1,11 +1,11 @@
 ﻿namespace TokenTOTP.Shared.ViewModel
 {
-    public abstract class TokenCommand
+    public interface ITokenCommand
     {
-        public string Seed { get; protected set; }
+        string Seed { get; }
 
-        public string TokenType { get; protected set; }
+        string TokenType { get; }
 
-        public int? TimeToLive { get; protected set; }
+        int? TimeToLive { get; }
     }
 }
