@@ -34,7 +34,7 @@ namespace TokenTOTP.Infra
                 .ConfigurationBusinessService(_configuration)
                 .AddApiConfigurations()
                 .AddVersioning()
-                .AddMediatR(typeof(StartupBase).Assembly)
+                .AddMediatR(typeof(Domain.ErrorMessages).Assembly, typeof(StartupBase).Assembly)
                 .AddAutoMapper(typeof(StartupBase).Assembly)
                 .AddSwaggerDocumentation()
                 .HealthChecksConfiguration(_configuration)
