@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Responses;
 using TokenTOTP.Infra.Configurations.Extensions.Application;
 using TokenTOTP.Infra.Configurations.Extensions.Services;
+using TokenTOTP.Infra.Configurations.Middlewares;
 using TokenTOTP.Infra.Swagger.Extensions;
 
 namespace TokenTOTP.Infra

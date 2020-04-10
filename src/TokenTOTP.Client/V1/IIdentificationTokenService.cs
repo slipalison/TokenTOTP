@@ -1,6 +1,6 @@
-﻿using Responses;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using Responses;
 using TokenTOTP.Shared.ViewModel;
 
 namespace TokenTOTP.Client.V1

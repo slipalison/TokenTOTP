@@ -16,7 +16,7 @@ namespace TokenTOTP.Domain.Services
             return (generator.ComputeTotp(), generator.RemainingSeconds());
         }
 
-        public (string seed, byte[] seedBytes) CreateSeed()
+        public static (string seed, byte[] seedBytes) CreateSeed()
         {
             // must be based in a HashMode or it may not work with all client libraries. Specially JS libs
             var bytes = KeyGeneration.GenerateRandomKey(HASH_MODE);

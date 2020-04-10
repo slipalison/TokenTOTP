@@ -1,7 +1,7 @@
-﻿using MediatR;
-using Responses;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using MediatR;
+using Responses;
 using TokenTOTP.Domain.Model.View;
 using TokenTOTP.Domain.Repositories;
 

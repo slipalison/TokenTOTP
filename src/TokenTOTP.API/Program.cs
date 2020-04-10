@@ -1,3 +1,4 @@
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -7,9 +8,9 @@ using Serilog.Exceptions;
 namespace TokenTOTP.API
 {
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-    public class Program
+    public static class Program
     {
-        public static void Main(string[] args) => CreateHostBuilder(args).Build().Run();
+        public static async Task Main(string[] args) => await CreateHostBuilder(args).Build().RunAsync();
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
@@ -18,9 +19,12 @@ namespace TokenTOTP.API
                     webBuilder.ConfigureAppConfiguration((context, configuration) =>
                     {
                         configuration.AddEnvironmentVariables();
-                        if (!context.HostingEnvironment.IsDevelopment() && context.HostingEnvironment.EnvironmentName != "Test")
-                        {
-                        }
+
+#pragma warning disable S125 // Sections of code should not be commented out
+                        //if (!context.HostingEnvironment.IsDevelopment() && context.HostingEnvironment.EnvironmentName != "Test")
+                        //{
+                        //}
+#pragma warning restore S125 // Sections of code should not be commented out
                     })
                     .UseSerilog((hostingContext, cfg) =>
                     {

@@ -1,17 +1,25 @@
 ﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
+using NSubstitute;
 using TokenTOTP.Client.V1;
+using TokenTOTP.Tests.StartServer;
 using Xunit;
 
 namespace TokenTOTP.Tests.IntegrateTests
 {
-    [Collection(HttpClientCollection.Name)]
-    public class ControllerTest : AbstractControllerTests
+    public class ControllerTest : StartTestServer
     {
+        private readonly IIdentificationTokenService _identificationTokenService;
         private readonly string _seed;
 
-        public ControllerTest() : base(new HttpClientFixture().Client)
+        public ControllerTest()
         {
+            var httpClientFactory = Substitute.For<IHttpClientFactory>();
+            httpClientFactory
+                    .CreateClient(nameof(IdentificationTokenService))
+                    .Returns(client);
+            _identificationTokenService = new IdentificationTokenService(httpClientFactory);
             _seed = Guid.NewGuid().ToString();
         }
 

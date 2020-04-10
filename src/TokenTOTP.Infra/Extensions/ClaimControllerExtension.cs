@@ -1,5 +1,5 @@
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 
 namespace TokenTOTP.Infra.Extensions
 {

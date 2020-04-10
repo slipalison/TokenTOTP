@@ -9,10 +9,10 @@
     <PackageReference Include="MediatR" Version="8.0.1" />
     <PackageReference Include="Otp.NET" Version="1.2.2" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="8.6.2" />
+    <PackageReference Include="Responses" Version="1.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Responses\Responses.csproj" />
     <ProjectReference Include="..\TokenTOTP.Shared\TokenTOTP.Shared.csproj" />
   </ItemGroup>
 </Project>

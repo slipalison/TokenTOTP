@@ -1,5 +1,4 @@
-using FluentValidation;
-using Responses;
+﻿using FluentValidation;
 
 namespace TokenTOTP.Infra.Extensions.Validations
 {

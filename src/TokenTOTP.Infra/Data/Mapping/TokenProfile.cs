@@ -1,4 +1,4 @@
-using AutoMapper;
+﻿using AutoMapper;
 
 namespace TokenTOTP.Infra.Data.Mapping
 {
@@ -6,8 +6,6 @@ namespace TokenTOTP.Infra.Data.Mapping
     {
         public TokenProfile()
         {
-            //CreateMap<OpenTicketCommand, Ticket>();
-            //CreateMap<FullCustomerWithTicket, FullCustomerDataCommand>().ReverseMap();
         }
     }
 }

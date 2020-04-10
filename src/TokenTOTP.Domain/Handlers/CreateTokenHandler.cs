@@ -1,11 +1,11 @@
-﻿using AutoMapper;
+﻿using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Options;
 using OtpNet;
 using Responses;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using TokenTOTP.Domain.Model.View;
 using TokenTOTP.Domain.Repositories;
 using TokenTOTP.Domain.Services;
@@ -31,7 +31,7 @@ namespace TokenTOTP.Domain.Handlers
 
         public async Task<Result<TokenResponse>> Handle(CreateTokenCommand request, CancellationToken cancellationToken)
         {
-            var seedBytes = _service.CreateSeed().seedBytes;
+            var seedBytes = OtpNetService.CreateSeed().seedBytes;
 
             if (!string.IsNullOrEmpty(request.Seed))
                 seedBytes = Encoding.UTF8.GetBytes(request.Seed + request.TokenType);

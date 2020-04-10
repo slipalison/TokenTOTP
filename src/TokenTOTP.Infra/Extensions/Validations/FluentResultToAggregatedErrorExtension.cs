@@ -1,8 +1,7 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.Extensions.DependencyInjection;
-using System;
+﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace TokenTOTP.Infra.Extensions.Validations
 {
@@ -31,6 +30,6 @@ namespace TokenTOTP.Infra.Extensions.Validations
 
         private static Action<ApiBehaviorOptions> SetupApiBehavior() => x => x.SuppressModelStateInvalidFilter = true;
 
-        private static IFilterMetadata AddFilter(MvcOptions opt) => opt.Filters.Add<FluentValidationToAbstractionErrorFilter>();
+        private static void AddFilter(MvcOptions opt) => opt.Filters.Add<FluentValidationToAbstractionErrorFilter>();
     }
 }

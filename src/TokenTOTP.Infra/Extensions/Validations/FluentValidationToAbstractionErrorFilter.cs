@@ -1,11 +1,15 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace TokenTOTP.Infra.Extensions.Validations
 {
     public class FluentValidationToAbstractionErrorFilter : IActionFilter
     {
+#pragma warning disable S2223 // Non-constant static fields should not be visible
+#pragma warning disable S1104 // Fields should not have public accessibility
         public static (string code, string message) InvalidPayloadError = ("404", "Requisição inválida");
+#pragma warning restore S1104 // Fields should not have public accessibility
+#pragma warning restore S2223 // Non-constant static fields should not be visible
 
         public FluentValidationToAbstractionErrorFilter()
         {

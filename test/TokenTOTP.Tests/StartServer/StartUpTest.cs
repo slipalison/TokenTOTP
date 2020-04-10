@@ -1,3 +1,4 @@
+﻿using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
@@ -8,12 +9,14 @@ using Microsoft.Extensions.DependencyInjection;
 using TokenTOTP.API;
 using TokenTOTP.Infra.Data.Contexts;
 
-namespace TokenTOTP.Tests
+namespace TokenTOTP.Tests.StartServer
 {
-    public class StartupTest : Startup
+    public class StartUpTest : Startup
     {
-        public StartupTest(IConfiguration configuration, IWebHostEnvironment environment) : base(configuration, environment)
+        public StartUpTest(IConfiguration configuration, IWebHostEnvironment environment) : base(configuration, environment)
         {
+            configuration["DefaultTimeTopt:Range"] = "60";
+            configuration["DefaultTimeTopt:Size"] = "6";
         }
 
         public override void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider versionProvider)
@@ -28,8 +31,10 @@ namespace TokenTOTP.Tests
 
         public override void ConfigureServices(IServiceCollection services)
         {
+            services
+                .AddControllers()
+                .AddApplicationPart(Assembly.Load(new AssemblyName("TokenTOTP.API")));
             services.AddEntityFrameworkSqlite();
-
             var inMemorySqlite = new SqliteConnection("Data Source=:memory:");
             inMemorySqlite.Open();
 
@@ -37,7 +42,6 @@ namespace TokenTOTP.Tests
             {
                 x.UseSqlite(inMemorySqlite);
             });
-
             base.ConfigureServices(services);
         }
     }

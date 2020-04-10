@@ -1,8 +1,9 @@
-﻿using Flurl.Http;
-using Responses;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using Flurl.Http;
+using Responses;
+using Responses.Http;
 using TokenTOTP.Shared.ViewModel;
 
 namespace TokenTOTP.Client.V1

@@ -12,6 +12,7 @@ namespace TokenTOTP.Domain.Services
     {
         public async Task SendAsync(NotificationRequest notificationRequest, string v)
         {
+            await Task.Run(() => Task.CompletedTask);
         }
     }
 }

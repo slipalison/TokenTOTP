@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using TokenTOTP.Domain.Model;
 using TokenTOTP.Domain.Repositories;
 using TokenTOTP.Infra.Data.Contexts;
@@ -10,13 +10,13 @@ namespace TokenTOTP.Infra.Data.Repositories
 {
     public class TokenTotpRepository : ITokenTotpRepository
     {
-        private TokenContext _context;
+        private readonly TokenContext _context;
 
         public TokenTotpRepository(TokenContext context) => _context = context;
 
-        public async Task<Totp> GetTokenAsync(string token, string hash, bool remove = true, CancellationToken cancellationToken = default)
+        public Task<Totp> GetTokenAsync(string token, string hash, bool remove = true, CancellationToken cancellationToken = default)
         {
-            return _context.Totp.FirstOrDefault(x => x.Token == token && x.HashTopt == hash);
+            return _context.Totp.FirstOrDefaultAsync(x => x.Token == token && x.HashTopt == hash);
         }
 
         public async Task InsertTokenAsync(string hashTopt, string tokenTopt, string consumeToken, long timeToLive, CancellationToken cancellationToken = default)

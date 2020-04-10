@@ -1,7 +1,7 @@
+﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 
 namespace TokenTOTP.Infra.Swagger.Filters
 {
@@ -12,7 +12,8 @@ namespace TokenTOTP.Infra.Swagger.Filters
 
         public void Apply(OpenApiSchema schema, SchemaFilterContext context)
         {
-            if (schema?.Properties == null) { return; }
+            if (schema?.Properties == null)
+            { return; }
 
             ExcludeProperties.ForEach(prop =>
             {

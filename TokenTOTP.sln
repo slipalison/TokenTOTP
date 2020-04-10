@@ -21,7 +21,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenTOTP.Client", "src\Tok
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{2BFA8216-1C12-4012-9D3B-4EFDBE404CF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenTOTP.Tests", "test\TokenTOTP.Tests\TokenTOTP.Tests.csproj", "{06AD3D42-F6B4-4707-A6F7-9F5C5FF35176}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenTOTP.Tests", "test\TokenTOTP.Tests\TokenTOTP.Tests.csproj", "{06AD3D42-F6B4-4707-A6F7-9F5C5FF35176}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5414144E-40D1-440F-B6CD-F4625BD49C60}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		.github\workflows\dotnetcore.yml = .github\workflows\dotnetcore.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
